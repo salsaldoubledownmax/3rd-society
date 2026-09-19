@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #e60023;
+    --color-primary-pressed: #cc001f;
+    --color-canvas: #ffffff;
+    --color-surface-soft: #fbfbf9;
+    --color-surface-card: #f6f6f3;
+    --color-secondary-bg: #e5e5e0;
+    --color-secondary-pressed: #c8c8c1;
+    --color-hairline: #dadad3;
+    --color-hairline-soft: #e5e5e0;
+    --color-ink: #000000;
+    --color-ink-soft: #211922;
+    --color-body: #33332e;
+    --color-charcoal: #262622;
+    --color-mute: #62625b;
+    --color-ash: #91918c;
+    --color-focus-outer: #435ee5;
+  }
+
+  body {
+    font-family: 'Gowun Dodum', 'Inter', -apple-system, BlinkMacSystemFont, 'Noto Sans KR', sans-serif;
+    color: #33332e;
+    background-color: #fbfbf9;
+  }
+
+  h1, h2, h3 {
+    letter-spacing: -0.025em;
+  }
+}
+
+.handwriting-font {
+  font-family: 'Nanum Pen Script', cursive, sans-serif;
+}
+
+/* Custom Pinterest-inspired UI Utilities */
+.btn-primary-red {
+  background-color: #e60023;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 16px;
+  transition: background-color 0.15s ease, transform 0.08s ease;
+}
+.btn-primary-red:hover {
+  background-color: #cc001f;
+}
+.btn-primary-red:active {
+  background-color: #b5001c;
+  transform: scale(0.98);
+}
+
+.btn-secondary-cream {
+  background-color: #e5e5e0;
+  color: #211922;
+  font-weight: 700;
+  border-radius: 16px;
+  transition: background-color 0.15s ease;
+}
+.btn-secondary-cream:hover {
+  background-color: #dadad3;
+}
+.btn-secondary-cream:active {
+  background-color: #c8c8c1;
+}
+
+/* Print optimizations for authentic A4 worksheet */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 10mm 10mm 10mm;
+  }
+
+  body {
+    background-color: white !important;
+    color: #111827 !important;
+    font-size: 13px !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-page-break-before {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  .print-shadow-none {
+    box-shadow: none !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  .print-bg-transparent {
+    background-color: transparent !important;
+  }
+}
+
+
