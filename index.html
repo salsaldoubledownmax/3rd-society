@@ -12,6 +12,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;600;700;800&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <script>
+      // GitHub Pages에서 루트 브랜치(/)로 기본 배포되었을 때 빌드본(docs/)으로 자동 연결
+      if (
+        window.location.hostname.endsWith('github.io') &&
+        !window.location.pathname.includes('/docs') &&
+        !window.location.pathname.includes('/dist')
+      ) {
+        var p = window.location.pathname;
+        if (!p.endsWith('/')) p += '/';
+        window.location.replace(p + 'docs/');
+      }
+    </script>
   </head>
   <body class="bg-[#fbfbf9] text-[#33332e] antialiased selection:bg-[#e60023]/10 selection:text-[#e60023]">
     <div id="root"></div>
